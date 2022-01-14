@@ -7,8 +7,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract SpaceCoin is ERC20 {
 
   address private immutable TREASURY_ACC;
-  address private immutable ICO_ADDRESS; 
-
   uint256 private constant MAX_SUPPLY = 500000;
   uint256 private constant TAX_PERC = 2;
 
@@ -16,7 +14,7 @@ contract SpaceCoin is ERC20 {
 
   bool private useTax = false;
 
-  constructor(address _treasuryAddr) ERC20("SpaceCoin", "SPC") {
+  constructor(address _treasuryAddr, address _icoAddress) ERC20("SpaceCoin", "SPC") {
 
     TREASURY_ACC  = _treasuryAddr;
     OWNER_ADDRESS = msg.sender;
